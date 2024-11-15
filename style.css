@@ -14,9 +14,39 @@ body {
   align-items: center;
   padding: 3px;
   background-color: rgb(21, 20, 31);
-  
 }
-.slider-container{
+header {
+  background-color: rgba(160, 157, 157, 0.342);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 200px;
+  border-radius: 0px 0px 90px 90px;
+}
+.logo {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 1.3em;
+  transition: 0.8s ease;
+  align-items: center;
+  word-spacing: 25px;
+  letter-spacing: -1px;
+}
+.logo:hover {
+  color: #00eeffc9;
+  text-shadow: #7c7979 0px 0px 10px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  overflow: hidden;
+}
+
+.slider-container {
   max-width: 1120px;
   width: 100%;
   padding: 40px 0;
@@ -29,7 +59,7 @@ body {
 }
 .card {
   border-radius: 25px;
-  background-color: rgba(160, 157, 157, 0.342);;
+  background-color: rgba(160, 157, 157, 0.342);
 }
 .image-content,
 .card-content {
@@ -54,10 +84,10 @@ body {
 }
 .card-image:hover {
   scale: 1.2;
-  box-shadow: rgb(255, 0, 191) 5px 5px 5px
-  ,rgb(21, 255, 0) 5px -5px 5px
-  ,rgb(0, 255, 179) -5px 5px 5px
-  ,rgb(0, 238, 255) -5px -5px 5px;
+  box-shadow: rgba(255, 255, 255, 0.493) 5px 5px 10px,
+    rgba(255, 255, 255, 0.493) 5px -5px 10px,
+    rgba(255, 255, 255, 0.493) -5px 5px 10px,
+    rgba(255, 255, 255, 0.493) -5px -5px 10px;
 }
 .card-image .card-img {
   height: 100%;
@@ -72,37 +102,65 @@ body {
   word-spacing: 15px;
   color: #ffffff;
 }
+.need {
+  margin: 20px;
+  font-weight: 600;
+}
 
-
-.swiper-navBtn{
+.swiper-navBtn {
   color: #6e93f7;
   transition: color 0.3s ease;
 }
-.swiper-navBtn:hover{
+.swiper-navBtn:hover {
   color: #4070f4;
 }
 .swiper-navBtn::before,
-.swiper-navBtn::after{
+.swiper-navBtn::after {
   font-size: 40px;
 }
-.swiper-button-next{
+.swiper-button-next {
   right: 0;
 }
-.swiper-button-prev{
+.swiper-button-prev {
   left: 0;
 }
-.swiper-pagination.bullet{
- background-color: #6e93f7;
- opacity: 1;
+.swiper-pagination.bullet {
+  background-color: #6e93f7;
+  opacity: 1;
 }
-.swiper-pagination.bullet-active{
- background-color: #4070f4;
+.swiper-pagination.bullet-active {
+  background-color: #4070f4;
 }
 .container {
   width: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.helpme {
+  min-height: 325px;
+  max-height: 330px;
+  height: 310px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 20px;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.namehelp {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+#btn {
+  position: relative;
+  width: 260px;
+  height: 50px;
+  margin: 20px;
 }
 
 .btn {
@@ -223,37 +281,27 @@ a:hover::before {
   box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
     0 0 60px var(--clr);
 }
-header {
-  background-color: rgba(160, 157, 157, 0.342);
+
+.card-image1 {
+  position: relative;
+  height: 130px;
+  width: 220px;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: 0.4s ease;
+}
+.card-image1:hover {
+  scale: 1.1;
+  box-shadow: #eeff00 2px 2px 5px, #eeff00 2px -2px 5px, #eeff00 -2px 2px 5px,
+    #eeff00 -2px -2px 5px;
+}
+.card-image1 .card-img1 {
+  height: 100%;
   width: 100%;
-  position: fixed;
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding:12px 200px;
-  border-radius: 0px 0px 90px 90px;
+  object-fit: cover;
+  border-radius: 100px;
+  border: 1px solid #ffffff;
 }
-.logo {
- text-decoration: none;
- color:black;
- margin: 0;
- padding: 0;
- font-weight: 700;
- font-size: 1.3em;
- transition: 0.8s ease;
- align-items: center;
- word-spacing: 25px;
- letter-spacing: -1px;
-}
-.logo:hover {
-    color: #00eeffc9;
-    text-shadow: #7c7979 0px 0px 10px;
-    letter-spacing: 9px;
-    font-weight: 900;
-   }
-
-
 
 
 textarea {
@@ -261,132 +309,152 @@ textarea {
 }
 
 .text {
-color: white;
-font-size: 20px;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
-
-
-
-
 .rounded-social-buttons {
-text-align: center;
+  text-align: center;
 }
 
 .rounded-social-buttons .social-button {
-display: inline-block;
-position: relative;
-cursor: pointer;
-width: 4.125rem;
-height: 3.125rem;
-border: 0.125rem solid transparent;
-padding: 0;
-text-decoration: none;
-text-align: center;
-color: #fefefe;
-font-size: 1.5625rem;
-font-weight: normal;
-line-height: 2em;
-border-radius: 1.6875rem;
-transition: all 0.5s ease;
-margin-right: 0.25rem;
-margin-bottom: 0.25rem;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 4.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
-.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
--webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
-.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
-font-size: 25px;
+.rounded-social-buttons .fa-twitter,
+.fa-facebook-f,
+.fa-linkedin,
+.fa-youtube,
+.fa-instagram {
+  font-size: 25px;
 }
 
 .rounded-social-buttons .social-button.telegram {
-background: #55acee;
+  background: #55acee;
 }
 
-.rounded-social-buttons .social-button.telegram:hover, .rounded-social-buttons .social-button.telegram:focus {
-color: #55acee;
-background: #fefefe;
-border-color: #55acee;
+.rounded-social-buttons .social-button.telegram:hover,
+.rounded-social-buttons .social-button.telegram:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
 }
 
 .rounded-social-buttons .social-button.facebook {
-background: #007bb5;
+  background: #007bb5;
 }
 
-.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
-color: #007bb5;
-background: #fefefe;
-border-color: #007bb5;
+.rounded-social-buttons .social-button.facebook:hover,
+.rounded-social-buttons .social-button.facebook:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
 }
 
 .rounded-social-buttons .social-button.whatsapp {
-background: #25bb00;
+  background: #25bb00;
 }
 
-.rounded-social-buttons .social-button.whatsapp:hover, .rounded-social-buttons .social-button.whatsapp:focus {
-color:  #25bb00;
-background: #fefefe;
-border-color:  #25bb00;
+.rounded-social-buttons .social-button.whatsapp:hover,
+.rounded-social-buttons .social-button.whatsapp:focus {
+  color: #25bb00;
+  background: #fefefe;
+  border-color: #25bb00;
 }
 
 .rounded-social-buttons .social-button.instagram {
-background: #a30036;
+  background: #a30036;
 }
 
-.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
-color:  #a30036;
-background: #fefefe;
-border-color:  #a30036;
+.rounded-social-buttons .social-button.instagram:hover,
+.rounded-social-buttons .social-button.instagram:focus {
+  color: #a30036;
+  background: #fefefe;
+  border-color: #a30036;
 }
 
-
-
-
-
-
-.navigation a:hover{
-    color: #00b7ffc9;
-    text-shadow: #7a7777 0px 0px 5px;
-    transform: scale(1.40);
+.navigation a:hover {
+  color: #00b7ffc9;
+  text-shadow: #7a7777 0px 0px 5px;
+  transform: scale(1.4);
 }
-@media screen and (max-width:768px) {
-  .slider-content{
+@media screen and (max-width: 768px) {
+  .slider-content {
     margin: 0 10px;
   }
-  header{
+  header {
     padding: 16px 20px;
     font-size: 14px;
-}
-  .logo{
-    word-spacing:10px;
   }
-  .swiper-navBtn{
+  .logo {
+    word-spacing: 10px;
+    pointer-events: none;
+    color: #000000c9;
+    text-shadow: #797b7c 0px 0px 10px;
+  }
+  .helpme {
+    max-height: 330px;
+    height: 310px;
+    word-spacing: 5px;
+    margin-bottom: 20px;
+    font-size: small;
+    font-weight: 800;
+  }
+  .swiper-navBtn {
     display: none;
   }
   .rounded-social-buttons .social-button {
-    width:4.125rem;
-    }
-}
-@media screen and (max-width:300px) {
-  .slider-content{
-    margin: 0 10px;
+    width: 4.125rem;
   }
-  header{
-    
-    font-size: x-small;
-    padding: 16px 10px;
 }
-  .swiper-navBtn{
+@media screen and (max-width: 519px) {
+  .helpme {
+    max-height: 330px;
+    height: 310px;
+    word-spacing: 5px;
+    margin-bottom: 20px;
+    font-size: medium;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header {
+    font-size: small;
+    padding: 16px 10px;
+  }
+
+  .swiper-navBtn {
     display: none;
   }
 }
+
