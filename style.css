@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background-color: rgb(21, 20, 31);
+  
+}
+.slider-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+  margin: auto;
+}
+.slider-content {
+  overflow: hidden;
+  border-radius: 25px;
+  margin: 0 40px;
+}
+.card {
+  border-radius: 25px;
+  background-color: rgba(160, 157, 157, 0.342);;
+}
+.image-content,
+.card-content {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+.card-image:hover {
+  scale: 1.2;
+  box-shadow: rgb(255, 0, 191) 5px 5px 5px
+  ,rgb(21, 255, 0) 5px -5px 5px
+  ,rgb(0, 255, 179) -5px 5px 5px
+  ,rgb(0, 238, 255) -5px -5px 5px;
+}
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+.name {
+  font-size: 25px;
+  font-weight: 800;
+  word-spacing: 15px;
+  color: #ffffff;
+}
+
+
+.swiper-navBtn{
+  color: #6e93f7;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070f4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 40px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination.bullet{
+ background-color: #6e93f7;
+ opacity: 1;
+}
+.swiper-pagination.bullet-active{
+ background-color: #4070f4;
+}
+.container {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.btn {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+}
+
+.btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  text-transform: uppercase;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.051);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(250, 52, 52, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.5s;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+}
+
+.btn:hover a {
+  letter-spacing: 3px;
+}
+
+.btn a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.149), transparent);
+  transform: skewX(45deg);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+a:hover::before {
+  transform: skewX(45deg) translateX(200%);
+  transition-delay: 0s;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-glow);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.btn:hover::before {
+  bottom: 0px;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-glow);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.btn:hover::after {
+  top: 0px;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.btn:nth-child(1):before,
+.btn:nth-child(1):after {
+  background: var(--clr);
+  box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+    0 0 60px var(--clr);
+}
+
+.btn:nth-child(2):before,
+.btn:nth-child(2):after {
+  background: var(--clr);
+  box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+    0 0 60px var(--clr);
+}
+
+.btn:nth-child(3):before,
+.btn:nth-child(3):after {
+  background: var(--clr);
+  box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
+    0 0 60px var(--clr);
+}
+header {
+  background-color: rgba(160, 157, 157, 0.342);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:12px 200px;
+  border-radius: 0px 0px 90px 90px;
+}
+.logo {
+ text-decoration: none;
+ color:black;
+ margin: 0;
+ padding: 0;
+ font-weight: 700;
+ font-size: 1.3em;
+ transition: 0.8s ease;
+ align-items: center;
+ word-spacing: 25px;
+ letter-spacing: -1px;
+}
+.logo:hover {
+    color: #00eeffc9;
+    text-shadow: #7c7979 0px 0px 10px;
+    letter-spacing: 9px;
+    font-weight: 900;
+   }
+
+
+
+
+textarea {
+  resize: none;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+white-space: nowrap;
+}
+
+
+
+
+
+.rounded-social-buttons {
+text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+display: inline-block;
+position: relative;
+cursor: pointer;
+width: 4.125rem;
+height: 3.125rem;
+border: 0.125rem solid transparent;
+padding: 0;
+text-decoration: none;
+text-align: center;
+color: #fefefe;
+font-size: 1.5625rem;
+font-weight: normal;
+line-height: 2em;
+border-radius: 1.6875rem;
+transition: all 0.5s ease;
+margin-right: 0.25rem;
+margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+-webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.telegram {
+background: #55acee;
+}
+
+.rounded-social-buttons .social-button.telegram:hover, .rounded-social-buttons .social-button.telegram:focus {
+color: #55acee;
+background: #fefefe;
+border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.facebook {
+background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+color: #007bb5;
+background: #fefefe;
+border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.whatsapp {
+background: #25bb00;
+}
+
+.rounded-social-buttons .social-button.whatsapp:hover, .rounded-social-buttons .social-button.whatsapp:focus {
+color:  #25bb00;
+background: #fefefe;
+border-color:  #25bb00;
+}
+
+.rounded-social-buttons .social-button.instagram {
+background: #a30036;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+color:  #a30036;
+background: #fefefe;
+border-color:  #a30036;
+}
+
+
+
+
+
+
+.navigation a:hover{
+    color: #00b7ffc9;
+    text-shadow: #7a7777 0px 0px 5px;
+    transform: scale(1.40);
+}
+@media screen and (max-width:768px) {
+  .slider-content{
+    margin: 0 10px;
+  }
+  header{
+    padding: 16px 20px;
+    font-size: 14px;
+}
+  .logo{
+    word-spacing:10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+  .rounded-social-buttons .social-button {
+    width:4.125rem;
+    }
+}
+@media screen and (max-width:300px) {
+  .slider-content{
+    margin: 0 10px;
+  }
+  header{
+    
+    font-size: x-small;
+    padding: 16px 10px;
+}
+  .swiper-navBtn{
+    display: none;
+  }
+}
