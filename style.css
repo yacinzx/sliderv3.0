@@ -453,8 +453,19 @@ textarea {
     padding: 16px 10px;
   }
 
-  .swiper-navBtn {
-    display: none;
-  }
+  
 }
+@media screen and (max-height: 900px) and (max-width: 500px) {
+  header {
+    margin: 0;
+    padding: 0;
+    display: none;
+    visibility: hidden;
+  }
+
+  
+}
+
+
+
 
